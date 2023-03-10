@@ -1,6 +1,7 @@
 Baixe o projeto
 
 Na pasta onde está o docker-compose, rode o comando:<br />
+docker-compose up -d --build
 docker-compose up
 
 Após isso acesse a url:
