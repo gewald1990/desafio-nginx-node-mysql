@@ -1,6 +1,6 @@
 Baixe o projeto
 
-Na pasta onde está o docker-compose, rode o comando:
+Na pasta onde está o docker-compose, rode o comando:<br />
 docker-compose up
 
 Após isso acesse a url:
@@ -15,4 +15,4 @@ Maria Joaquina<br />
 Paulo Roberto
 
 
-Obs: Esses dados foram inseridos no momento que sone o banco mysql utilizando o arquivo testdumpo.sql dentro da pasta db
+Obs: Esses dados foram inseridos no momento que sobe o banco mysql utilizando o arquivo testdumpo.sql dentro da pasta db
