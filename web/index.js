@@ -11,7 +11,6 @@ const connection = mysql.createPool({
 });
 
 app.get("/", (req, res) => {
-	//res.send('<h1>Full Cycle Rocks!</h1>')
   connection.query("SELECT * FROM people", (err, rows) => {
 	   var resultado = '<h1>Full Cycle Rocks!</h1><br>';
 	   for (let row of rows) {
