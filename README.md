@@ -4,7 +4,7 @@ Na pasta onde está o docker-compose, rode o comando:
 docker-compose up
 
 Após isso acesse a url:
-localhost
+http://localhost:8080/
 
 O resultado será:
 
