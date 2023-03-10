@@ -10,8 +10,8 @@ O resultado será:
 
 Full Cycle Rocks!
 
-Carlos Da Silva
-Maria Joaquina
+Carlos Da Silva<br />
+Maria Joaquina<br />
 Paulo Roberto
 
 
