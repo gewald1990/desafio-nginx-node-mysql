@@ -2,12 +2,12 @@ version: "3"
 services:
   db:
     build: ./db
+    hostname: db
+    container_name: db
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: test
     restart: always
-    networks:
-        - net
   nginx:
     build:
       context: ./nginx
@@ -17,11 +17,11 @@ services:
         - "8080:80"
     depends_on:
         - web
-    networks:
-        - net
+
   web:
     build: ./web
     hostname: nodejsserver
+    command: sh -c './wait-for-it.sh -t 0 db:3306 -- npm start'
     environment:
       MYSQL_DATABASE: test
       MYSQL_USER: root
@@ -32,9 +32,5 @@ services:
     depends_on:
       - db
     restart: on-failure
-    networks:
-        - net
 
-networks:
-  net:
-    external: true
+
