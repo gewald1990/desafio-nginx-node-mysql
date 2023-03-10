@@ -1,0 +1,40 @@
+version: "3"
+services:
+  db:
+    build: ./db
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: test
+    restart: always
+    networks:
+        - net
+  nginx:
+    build:
+      context: ./nginx
+    container_name: nginx
+    hostname: nginx
+    ports:
+        - "80:80" 
+    depends_on:
+        - web
+    networks:
+        - net
+  web:
+    build: ./web
+    hostname: nodejsserver
+    environment:
+      MYSQL_DATABASE: test
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      MYSQL_HOST: db
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    restart: on-failure
+    networks:
+        - net
+
+networks:
+  net:
+    external: true
